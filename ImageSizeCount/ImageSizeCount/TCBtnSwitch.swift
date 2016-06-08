@@ -25,9 +25,7 @@ class TCBtnSwitch: UIButton {
     override func drawRect(rect: CGRect) {
         // Drawing code
     }
-    */
-//    var _isHigh = false
-    
+    */    
     var _image : UIImage!
     var _highImage : UIImage!
     var _name : String!
@@ -39,11 +37,17 @@ class TCBtnSwitch: UIButton {
         print("this is frame init")
     }
     
-    func setImage(image: UIImage?, highImage:UIImage,name:String,forState state: UIControlState) {
+    func setImage(image: UIImage?, highImage:UIImage?,name:String,forState state: TCSwitchState) {
         _image = image
         _highImage = highImage
         _name = name
-        super.setImage(image, forState: .Normal)
+        
+        if state == .stateClick {
+            super.setImage(_highImage, forState: .Normal)
+        }else{
+             super.setImage(_image, forState: .Normal)
+        }
+//        super.setImage(image, forState: .Normal)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -61,6 +65,7 @@ class TCBtnSwitch: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+//        super.init(coder: aDecoder)
     }
 }
 
