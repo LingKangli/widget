@@ -14,23 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var heigh: UITextField!
     
      var iphone4: TCBtnSwitch!
+    @IBOutlet weak var resultLab: UILabel!
+    
      var iphone5: TCBtnSwitch!
      var iphone6: TCBtnSwitch!
     
     @IBOutlet weak var countBtn: UIButton!
-    @IBOutlet weak var widthImag: UILabel!
-    @IBOutlet weak var heightImage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
        
         iphone4 = TCBtnSwitch(frame: CGRectMake(SCREENWIDTH-100,100,20,20))
         iphone5 = TCBtnSwitch(frame: CGRectMake(iphone4.frame.origin.x,CGRectGetMaxY(iphone4.frame),20,20))
         iphone6 = TCBtnSwitch(frame: CGRectMake(iphone4.frame.origin.x,CGRectGetMaxY(iphone5.frame),20,20))
         
         iphone4.setImage(UIImage(named:"radioClickedNo" ), highImage: UIImage(named:"radioClicked" ), name: "iphone4", forState: .stateNoClick)
-        iphone5.setImage(UIImage(named:"radioClickedNo" ), highImage: UIImage(named:"radioClicked" ), name: "iphone5", forState: .stateNoClick)
+        iphone5.setImage(UIImage(named:"radioClickedNo" ), highImage: UIImage(named:"radioClicked" ), name: "iphone5", forState: TCSwitchState.stateClick)
         iphone6.setImage(UIImage(named:"radioClickedNo" ), highImage: UIImage(named:"radioClicked" ), name: "iphone6", forState: .stateNoClick)
         
         iphone4.delegate = self
@@ -47,9 +48,9 @@ class ViewController: UIViewController {
 
     func countAction() {
         print("计算结果")
+        resultLab.text = ""
         
-        widthImag.text = width.text
-        heightImage.text = heigh.text
+        
         
     }
     override func didReceiveMemoryWarning() {
