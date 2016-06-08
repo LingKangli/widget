@@ -47,7 +47,6 @@ class TCBtnSwitch: UIButton {
         _name = name
         _state = state
         if state == .stateClick {
-            
             super.setImage(_highImage, forState: .Normal)
         }else{
              super.setImage(_image, forState: .Normal)
@@ -78,7 +77,6 @@ extension TCBtnSwitch{
         self._state = state
         if state == .stateClick {
             self.setImage(_highImage, forState: .Normal)
-
         }else{
             self.setImage(_image, forState: .Normal)
 
