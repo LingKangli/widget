@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+//        this function will be used.
 //        switch begin
         iphone4.delegate = self
         iphone5.delegate = self
