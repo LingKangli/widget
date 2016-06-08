@@ -25,7 +25,8 @@ class TCBtnSwitch: UIButton {
     override func drawRect(rect: CGRect) {
         // Drawing code
     }
-    */    
+    */
+    
     var _image : UIImage!
     var _highImage : UIImage!
     var _name : String!
@@ -47,7 +48,6 @@ class TCBtnSwitch: UIButton {
         }else{
              super.setImage(_image, forState: .Normal)
         }
-//        super.setImage(image, forState: .Normal)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -65,7 +65,6 @@ class TCBtnSwitch: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-//        super.init(coder: aDecoder)
     }
 }
 
