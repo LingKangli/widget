@@ -32,6 +32,9 @@ class TCBtnSwitch: UIButton {
     var _name : String!
     var _state : TCSwitchState = .stateNoClick
     var delegate : TCBtnSwitchDelegate!
+//    var titleLab : UILabel!
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,8 +45,9 @@ class TCBtnSwitch: UIButton {
         _image = image
         _highImage = highImage
         _name = name
-        
+        _state = state
         if state == .stateClick {
+            
             super.setImage(_highImage, forState: .Normal)
         }else{
              super.setImage(_image, forState: .Normal)
